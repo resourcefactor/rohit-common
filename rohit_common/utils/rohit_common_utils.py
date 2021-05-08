@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 import frappe
-from validate_email import validate_email
+# from validate_email import validate_email
 from frappe.utils import get_files_path
 
 
@@ -88,9 +88,9 @@ def validate_email_addresses(comm_sep_email, backend=0):
         emails = comm_sep_email.split(',')
         for email_id in emails:
             if email_id:
-                is_valid = validate_email(email_id, check_regex=True, check_mx=True, from_address=test_email,
-                                          helo_host=em_domain, smtp_timeout=10, dns_timeout=10,
-                                          use_blacklist=True, debug=True)
+                # is_valid = validate_email(email_id, check_regex=True, check_mx=True, from_address=test_email,
+                #                           helo_host=em_domain, smtp_timeout=10, dns_timeout=10,
+                #                           use_blacklist=True, debug=True)
                 if is_valid != 1:
                     if email_id != "NA":
                         if backend == 0:
